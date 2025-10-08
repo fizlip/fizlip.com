@@ -1,0 +1,122 @@
+{{ block "index" . }}
+<html>
+    <head>
+        <title>Filip Zlatoidsky</title>
+        <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="banner">
+            <img class="profile-img" id="profile" src="https://fizlip.s3.eu-central-1.amazonaws.com/profile.jpeg" alt="Profile image" />
+            <div style="">
+                <h1 style="padding: 0px; margin: 0px">Filip Zlatoidsky</h1>
+                <p style="padding: 0px; margin-top: 5px; font-size: 18px;"><i>A quote that summarizes me</i></p>
+                <div class="actions">
+                    <a class="btn btn-secondary btn-icon" href="https://github.com/fizlip" target="_blank" rel="noopener" aria-label="GitHub">
+                        <img src="https://images.seeklogo.com/logo-png/30/2/github-logo-png_seeklogo-304612.png" alt="GitHub" />
+                    </a>
+                    <a class="btn btn-secondary btn-icon" href="https://twitter.com/zlatoidsky" target="_blank" rel="noopener" aria-label="Twitter">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1200px-Logo_of_Twitter.svg.png" alt="Twitter" />
+                    </a>
+                    <a class="btn btn-secondary btn-icon" href="mailto:you@example.com?subject=Hello%20Filip&body=Hi%20Filip%2C%0A%0A"                    target="_blank" rel="noopener" aria-label="Twitter">
+                        <img src="https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/112-gmail_email_mail-512.png" alt="Twitter" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="timeline-section">
+            <h2>about me</h2>
+            <ul class="timeline">
+                <!-- Replace these examples with your real entries -->
+                <li>
+                    <div class="timeline-date">
+                        Sep. 2024 → Now
+                        <br />
+                        <img style="height: 30px;border-radius: 50%;" src="https://f4-public.s3.eu-central-1.amazonaws.com/public/assets/f4-logo-yellow-small.png" alt="f4rmhouse logo" />
+                    </div>
+                    <div class="timeline-content">
+                        <h3>f4rmhouse • Founder</h3>
+                        <p>Created a browser native MCP client that allows users to add MCP servers to LLMs creating a more customized AI experience.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-date">
+                        Oct. 2023 → Oct. 2024
+                        <br />
+                        <img style="height: 30px;border-radius: 50%;" src="https://space.bouncewatch.com/images/561456/MQI---Munich-Quantum-Instruments-logo.jpg" alt="Chalmers University of Technology" />
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Munich Quantum Instruments (MQI)• Software Engineer</h3>
+                        <p>Led a small team that created software letting researchers interact with a Superconducting Single Photon Detector (SSPD).</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-date">
+                        2021 → 2023
+                        <img style="height: 30px;border-radius: 50%;" src="https://www.chalmers.se/_next/image/?url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fnhwjqdyg%2Fchalmers-avancez_456x456px.png%3Frxy%3D0.4857254205857173%252C0.4750532196066489%26width%3D600%26height%3D600%26v%3D1db1a3dec796eb0%26quality%3D60%26format%3Dwebp&w=3840&q=90" alt="Chalmers University of Technology" />
+                        <img style="height: 30px;border-radius: 50%;" src="https://media.licdn.com/dms/image/v2/D4D0BAQGYm_x_LuZ84g/company-logo_200_200/B4DZhWqognGsAI-/0/1753800673663/technische_universitat_munchen_logo?e=2147483647&v=beta&t=ceFUBJnHQ-n5fIyb8oWt0K0pCvc2ujCdH0NUr8f-O6I" alt="Chalmers University of Technology" />
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Masters Student • Chalmers University of Technology and the Technical University of Munich</h3>
+                        <p>MSc at Chalmers University of Technology and Technical University of Munich, where I worked with Michiel van de Panne on veryfing the results of for quantum programs , i.e., unit testing for quantum programs. </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-date">2020 → 2021
+                        <img style="height: 30px;border-radius: 50%;" src="https://scontent-arn2-1.xx.fbcdn.net/v/t39.30808-1/300797678_481988687268445_5596858591782447077_n.png?stp=dst-png_s480x480&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=W9oEbYwQq74Q7kNvwH_816_&_nc_oc=AdmpyqVea9sO0TdPMx13iM-VmLf9OulpK63wLXW9Ne5QbW84V_6bgdZzs46Uz7pM-Zc&_nc_zt=24&_nc_ht=scontent-arn2-1.xx&_nc_gid=08uTSB24i2uueYCssvLNdA&oh=00_Afc-pQ0tFpsXociEUYQxZG8Dt7KZuoJSGD_3_tfhiKON3A&oe=68EBF850" alt="Chalmers University of Technology" />
+                    </div>
+                    <div class="timeline-content">
+                        <h3>ISGG • Founding Engineer</h3>
+                        <p>Created a CRM that let's the sales team automate different tasks like registering sales and calculating salaries. The CRM lead to productivity gains resulting in 22% increase in revenue.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-date">
+                        2017 → 2020
+                        <img style="height: 30px;border-radius: 50%;" src="https://www.chalmers.se/_next/image/?url=https%3A%2F%2Fcms.www.chalmers.se%2FMedia%2Fnhwjqdyg%2Fchalmers-avancez_456x456px.png%3Frxy%3D0.4857254205857173%252C0.4750532196066489%26width%3D600%26height%3D600%26v%3D1db1a3dec796eb0%26quality%3D60%26format%3Dwebp&w=3840&q=90" alt="Chalmers University of Technology" />
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Chalmers University of Technology • Bachelor Student</h3>
+                        <p>BSc at Chalmers University of Technology with a 4.0 average grade (3.5 GPA). This is where I first got into quant trading, creating about dozen arbitrage bots for crypto trading generating about $500,000 in profits over 5 years. </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="timeline-section">
+            <h2>pet projects</h2>
+            <div style="display: flex">
+                <img style="height: 60px;border: 1px solid black" src="https://pbs.twimg.com/profile_images/925732895196635136/xFSh4FDP_400x400.jpg"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Spekter</a> I created a web-scraper in Rust and used it to scrape all the laws on the swedish government website. I then hooked it up to a RAG pipeline creating a simple legal agent specialized on the Swedish legal code.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom:5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+11.56.43.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com">PDFJourney</a> is Midjourney but for PDFs. It let's users generate PDF documents from a text prompt. Most users use it to generate CVs, cover letters and content for digital courses.</p>
+            </div>
+            <div style="display: flex">
+                <img style="height: 60px;border: 1px solid black;margin-bottom:5px" src="https://miro.medium.com/1*WG5_xDDwHv0lMaVUYLNbVA.png"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Decentralized Social Media</a> I created a open source social media site that with a backend, an API and frontend. It supports, posts, reactions and a simple recommendation engine. The goal is to allow anyone to easily deploy their own social media site (as easily as a shopify store) with a similar experience to Twitter.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px;" src="https://k21academy.com/wp-content/uploads/2021/09/AWS-Architecture-1-e1632285931271.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com">AWSGPT</a> this is an early coding agent that let's DevOps teams interact with the AWS CLI using natural language, powered by GPT3.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://cdn0.scrvt.com/b095ee27d37b3d7b6b150adba9ac6ec8/8c6ad29abd8b3ada/3f6b32b72af8/Overview.svg"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Botify</a> a marketplace for AI Agents, got 2nd place in the 2023 Chainlink hackathon.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+13.53.08.png"/>
+                <p style="margin-left:5px"><a href="https://www.spekter.io/">MCPlist</a> a search engine for MCP servers, i.e. Google but for MCP.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu7_3ZObB6cO2sb2k8pLCEVq6B62ZCCAEpZQ&s"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/nostr-relay-connector">Nostr Relay Connector</a> let's users access every nostr server from one single website.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+13.55.35.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com/home">AI enabled text editor</a> an intuitive text editor with "vim-like" bindings that you can edit with LLMs, think Cursor but for Microsoft Word.</p>
+            </div>
+        </div>
+    </body>
+</html>
+{{ end }}
