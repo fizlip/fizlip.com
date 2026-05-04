@@ -1,0 +1,20 @@
+{{ block "article" . }}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Title }} - Filip Zlatoidsky</title>
+        <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="article-section">
+            <a href="/" class="link">home</a> | <a href="/blog" class="link">back</a>
+            <h1>{{ .Title }}</h1>
+            <p class="article-date">{{ .Date }}</p>
+            <div class="article-body">
+                {{ .Body }}
+            </div>
+        </div>
+    </body>
+</html>
+{{ end }}

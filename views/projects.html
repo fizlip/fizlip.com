@@ -1,0 +1,53 @@
+{{ block "projects" . }}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Projects - fizlip</title>
+        <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
+    <body>
+        <div class="banner">
+            <div style="">
+                <h1 style="padding: 0px; margin: 0px; font-size: 21px;"><a href="/" style="text-decoration: none; color: inherit;">fizlip</a></h1>
+                <p style="padding: 0px; margin-top: 5px; font-size: 18px;"><i>things building</i></p>
+            </div>
+        </div>
+        <div class="timeline-section">
+            <h2>pet projects</h2>
+            <div style="display: flex">
+                <img style="height: 60px;border: 1px solid black" src="https://pbs.twimg.com/profile_images/925732895196635136/xFSh4FDP_400x400.jpg"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Spekter</a> I created a web-scraper in Rust and used it to scrape all the laws on the swedish government website. I then hooked it up to a RAG pipeline creating a simple legal agent specialized on the Swedish legal code.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom:5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+11.56.43.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com">PDFJourney</a> is Midjourney but for PDFs. It let's users generate PDF documents from a text prompt. Most users use it to generate CVs, cover letters and content for digital courses.</p>
+            </div>
+            <div style="display: flex">
+                <img style="height: 60px;border: 1px solid black;margin-bottom:5px" src="https://miro.medium.com/1*WG5_xDDwHv0lMaVUYLNbVA.png"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Decentralized Social Media</a> I created a open source social media site that with a backend, an API and frontend. It supports, posts, reactions and a simple recommendation engine. The goal is to allow anyone to easily deploy their own social media site (as easily as a shopify store) with a similar experience to Twitter.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px;" src="https://k21academy.com/wp-content/uploads/2021/09/AWS-Architecture-1-e1632285931271.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com">AWSGPT</a> this is an early coding agent that let's DevOps teams interact with the AWS CLI using natural language, powered by GPT3.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://cdn0.scrvt.com/b095ee27d37b3d7b6b150adba9ac6ec8/8c6ad29abd8b3ada/3f6b32b72af8/Overview.svg"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/botify">Botify</a> a marketplace for AI Agents, got 2nd place in the 2023 Chainlink hackathon.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+13.53.08.png"/>
+                <p style="margin-left:5px"><a href="https://www.spekter.io/">MCPlist</a> a search engine for MCP servers, i.e. Google but for MCP.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu7_3ZObB6cO2sb2k8pLCEVq6B62ZCCAEpZQ&s"/>
+                <p style="margin-left:5px"><a href="https://github.com/fizlip/nostr-relay-connector">Nostr Relay Connector</a> let's users access every nostr server from one single website.</p>
+            </div>
+            <div style="display: flex">
+                <img style="width: 60px;border: 1px solid black;margin-bottom: 5px" src="https://fizlip.s3.eu-central-1.amazonaws.com/Screenshot+2025-10-08+at+13.55.35.png"/>
+                <p style="margin-left:5px"><a href="https://pdfjourney.com/home">AI enabled text editor</a> an intuitive text editor with "vim-like" bindings that you can edit with LLMs, think Cursor but for Microsoft Word.</p>
+            </div>
+        </div>
+    </body>
+</html>
+{{ end }}
