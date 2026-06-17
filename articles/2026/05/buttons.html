@@ -1,5 +1,69 @@
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p>Scheduling a project with interconnected dependencies and multiple processors is a known NP-hard problem. <strong>YOU CANNOT DIVIDE AND CONQUER TO SOLVE A COMPLEX SCHEDULING PROBLEM IN POLYNOMIAL TIME</strong>. While simple schedules involving 1 processor and a couple of tasks is trivial to solve (one coding agent running in a single thread, i&#39;m sure we all know how that this is pretty much solved by now). Asking an LLM to implement a complex project plan is the equal to asking it to solve an NP-hard problem. </p>
+<p>The number of possible schedules you have with 1000 tasks, 10 processors and 1 day is <code>P(172800, 1000) = a very big number</code>. While you might get lucky (basically 0% of the time) and find a solution it&#39;s way more probable that the project ends up in a million lines of <a href="https://github.com/wilsonzlin/fastrender">disapointment</a>. There are far more efficient ways to generate schedules than relying on LLM hallucinations (and i&#39;m surprised very few people are talking about this). ILP solvers like CP-SAT have been around for years and help companies schedule everything from flight crews to kubernetes cluster resources, why not use this to orchestrate agents? </p>
+<p>I wonder if you can use these solvers ILP solvers like CP-SAT to create plans for a coding agents that lead to qualitative differences compared to a vanilla LLM plan. I&#39;ll conduct the experiment by using the cursor teams experiences outlined in their blog post titled <a href="https://cursor.com/blog/scaling-agents">Scaling long-running autonomous coding</a> from back in the stone ages of Jan. 2026 and comparing it with a scheduling procedure that I made using CP-SAT (you can use proprietary solvers like Gurobi or CPLEX as well but CP-SAT is open source so...). Since I don&#39;t have $1 million dollars to spend on trillions of tokens to create a web browser, i&#39;ll settle with creating a CRM system for a moving company, which should include a lot of complexity that most vibe coding apps won&#39;t be able to manage without human oversight.</p>
+<h2 id="the-setup">The setup</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>A product requirement doc, PRD<ul>
+<li>Note: I initially create a PRD by hand and ask an AI to complete it with a detailed requirements list.</li>
+</ul>
+</li>
+<li>Claude Opus 3.5</li>
+</ul>
+<h3 id="null-case">Vanilla LLM</h3>
+<p>We have a planner agent that decides what tasks to do next (pick the first tasks based on the PRD). The planner is able to spawn worker agents that implement the currently active tasks. When the worker agents are done a judge will determine whether the task has been implemented or if needs to be refined or redone completely. The planner decides if there needs to be more features added or removed and then decide what tasks to do next. This process continues until the requirements have been fulfilled.</p>
+<table>
+<thead>
+<tr>
+<th>Time elapsed</th>
+<th>Model</th>
+<th>Tokens in</th>
+<th>Tokens out</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16:28</td>
+<td>claude-opus-4-6</td>
+<td>8 241 813</td>
+<td>132 432</td>
+<td>USD 11.62</td>
+</tr>
+<tr>
+<td>19:34</td>
+<td>calude-opus-4-6</td>
+<td>11 236 394</td>
+<td>166 475</td>
+<td>USD 11.69</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scheduling-method">Scheduling method</h3>
+<p>From the PRD we ask a planner agent to generate a DAG. This DAG is used to create a schedule for the project using CP-SAT. For each time step in the schedule the planner checks what tasks should be in progress, if no agent is working on the task and it has not yet been started it spawns an agent, if the task is done a judge is used to check if it has been implemented correctly if it&#39;s not the worker gets 3 retries to finish the task otherwise the code is used as is. This process continues until the entire schedule has been completed.</p>
+<table>
+<thead>
+<tr>
+<th>Time elapsed</th>
+<th>Model</th>
+<th>Tokens in</th>
+<th>Tokens out</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>29:44</td>
+<td>claude-opus-4-6</td>
+<td>17 381 567</td>
+<td>132 502</td>
+<td>$13,89</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
