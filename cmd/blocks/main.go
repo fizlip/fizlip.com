@@ -42,6 +42,8 @@ func main() {
 
 	// Serve CSS files from /css
 	e.Static("/css", "css")
+	// Serve static assets (images, etc.)
+	e.Static("/static", "static")
 
 	count := Count{Count: 0}
 
